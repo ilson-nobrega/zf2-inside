@@ -16,16 +16,31 @@ $definitionList = new Zend\Di\DefinitionList(array(
 ));
 
 $di = new \Zend\Di\Di($definitionList);
-$di->instanceManager()->setParameters('SON\Db\Connection', array(
+//$di->instanceManager()->setParameters('SON\Db\Connection', array(
+//    'server' => 'localhost',
+//    'dbname' => 'banco',
+//    'user'  =>  'postgres',
+//    'password' => 123456
+//));
+$di->instanceManager()->addAlias('Conexao1', 'SON\Db\Connection', array(
     'server' => 'localhost',
     'dbname' => 'banco',
     'user'  =>  'postgres',
     'password' => 123456
 ));
+$di->instanceManager()->addAlias('Conexao2', 'SON\Db\Connection', array(
+    'server' => 'localhost',
+    'dbname' => 'banco',
+    'user'  =>  'postgres',
+    'password' => 123456896
+));
 $di->instanceManager()->addAlias('Produto', 'SON\Produto');
 $produto = $di->get('Produto');
 
-print_r($produto);exit;
+$conexao1 = $di->get('Conexao2');
+
+$di->instanceManager()->addTypePreference('SON\Db\Connection', 'Conexao1');
 $categoria = $di->get('SON\Categoria');
+print_r($categoria);exit;
 
 @Zend\Di\Display\Console::export($di);
