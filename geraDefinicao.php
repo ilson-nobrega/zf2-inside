@@ -10,7 +10,7 @@ $loader = new Zend\Loader\StandardAutoloader(array('autoregister_zf' => true));
 $loader->registerNamespace('SON', 'library/SON');
 $loader->register();
 
-$components = array('SON', 'Zend');
+$components = array('SON');
 
 foreach ($components as $component) {
     $diCompiler = new Zend\Di\Definition\CompilerDefinition();

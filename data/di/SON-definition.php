@@ -45,6 +45,30 @@
       ),
     ),
   ),
+  'SON\\CategoriaAwareInterface' => 
+  array (
+    'supertypes' => 
+    array (
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+      'setCategoria' => 0,
+    ),
+    'parameters' => 
+    array (
+      'setCategoria' => 
+      array (
+        'SON\\CategoriaAwareInterface::setCategoria:0' => 
+        array (
+          0 => 'categoria',
+          1 => 'SON\\Categoria',
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
   'SON\\Db\\Connection' => 
   array (
     'supertypes' => 
@@ -94,31 +118,21 @@
   array (
     'supertypes' => 
     array (
+      0 => 'SON\\CategoriaAwareInterface',
     ),
     'instantiator' => '__construct',
     'methods' => 
     array (
-      'setId' => 0,
-      'setNome' => 0,
+      'setCategoria' => 3,
     ),
     'parameters' => 
     array (
-      'setId' => 
+      'setCategoria' => 
       array (
-        'SON\\Produto::setId:0' => 
+        'SON\\Produto::setCategoria:0' => 
         array (
-          0 => 'id',
-          1 => NULL,
-          2 => true,
-          3 => NULL,
-        ),
-      ),
-      'setNome' => 
-      array (
-        'SON\\Produto::setNome:0' => 
-        array (
-          0 => 'nome',
-          1 => NULL,
+          0 => 'categoria',
+          1 => 'SON\\Categoria',
           2 => true,
           3 => NULL,
         ),
